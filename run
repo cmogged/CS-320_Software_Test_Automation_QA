@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "compiling program..."
+javac -cp .:lib/junit-jupiter-api.jar:lib/apiguardian-api.jar:lib/junit-jupiter-engine.jar Contact.java ContactTest.java ContactServiceTest.java
+
+echo "running tests..."
+
+java -jar lib/junit-platform-console-standalone-*.jar --class-path . --scan-classpath
+
+echo ""
+#read -p "Press enter to continue"
+
